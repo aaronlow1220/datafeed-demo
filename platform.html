@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platform | Datafeed</title>
+    <link rel="shortcut icon" href="https://symbols.getvecta.com/stencil_28/26_data-catalog.96ec6138ec.svg"
+        type="image/x-icon">
+</head>
+<script>
+    let base_url = "https://datafeed-api-aaron.atelli.ai";
+
+    let url = `${base_url}/platform`;
+
+    function collectAndSendData(divId) {
+        const div = document.getElementById(divId);
+        const inputs = div.querySelectorAll('input');
+        const name = document.querySelector("#name");
+        const label = document.querySelector("#label");
+        const data = {};
+
+        inputs.forEach(input => {
+            data[input.id] = input.value;
+        });
+
+        const jsonStructure = {
+            name: name.value,
+            label: label.value,
+            data: JSON.stringify(data)
+        };
+
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(jsonStructure)
+        })
+            .then((response) => {
+                if (!response.ok) {
+                    throw new Error();
+                }
+                alert('Success');
+            })
+            .catch(error => alert('Error'));
+    }
+</script>
+<style>
+    * {
+        font-family: sans-serif;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background-color: #f0f0f5;
+    }
+
+    #platform-data {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        max-width: 800px;
+    }
+
+    .form {
+        width: 100%;
+        margin: 20px auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        background-color: #ffffff;
+        /* 表單背景顏色 */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        /* 表單陰影 */
+    }
+
+    .form-group {
+        display: flex;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+
+    label {
+        width: 30%;
+        font-size: 14px;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 0;
+        padding-right: 10px;
+        box-sizing: border-box;
+        text-align: right;
+    }
+
+    input[type="text"] {
+        width: 70%;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        font-size: 16px;
+        box-sizing: border-box;
+    }
+
+    input[type="text"]:focus {
+        border-color: #007BFF;
+        outline: none;
+        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    }
+
+    input[type="button"] {
+        padding: 8px 16px;
+        background-color: #007BFF;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        font-size: 14px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+        margin-bottom: 1rem;
+    }
+
+    input[type="button"]:hover {
+        background-color: #0056b3;
+    }
+
+    .platform_name {
+        display: flex;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    nav {
+        width: 100%;
+        background-color: white;
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    nav a {
+        text-decoration: none;
+        color: #333;
+    }
+
+    .title {
+        margin-bottom: 1rem;
+    }
+</style>
+
+<body>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="client.html">Client</a>
+        <a href="platform.html">Platform</a>
+        <a href="upload.html">Upload</a>
+        <a href="export.html">Export</a>
+    </nav>
+    <h1 class="title">Platform Data Mapping List</h1>
+    <div id="platform-data">
+        <div class="platform_name">
+            <input id="label" placeholder="label" type="text" value="Facebook">
+            <input id="name" placeholder="datafeed name" type="text" value="fb">
+        </div>
+        <div class="form" id="form">
+            <div class="form-group">
+                <label for="datafeedid">id</label>
+                <input id="datafeedid" placeholder="id" type="text" value="id">
+            </div>
+
+            <div class="form-group">
+                <label for="availability">availability</label>
+                <input id="availability" placeholder="availability" type="text" value="availability">
+            </div>
+
+            <div class="form-group">
+                <label for="condition">condition</label>
+                <input id="condition" placeholder="condition" type="text" value="condition">
+            </div>
+
+            <div class="form-group">
+                <label for="description">description</label>
+                <input id="description" placeholder="description" type="text" value="description">
+            </div>
+
+            <div class="form-group">
+                <label for="image_link">image_link</label>
+                <input id="image_link" placeholder="image_link" type="text" value="image_link">
+            </div>
+
+            <div class="form-group">
+                <label for="link">link</label>
+                <input id="link" placeholder="link" type="text" value="link">
+            </div>
+
+            <div class="form-group">
+                <label for="title">title</label>
+                <input id="title" placeholder="title" type="text" value="title">
+            </div>
+
+            <div class="form-group">
+                <label for="price">price</label>
+                <input id="price" placeholder="price" type="text" value="price">
+            </div>
+
+            <div class="form-group">
+                <label for="sale_price">sale_price</label>
+                <input id="sale_price" placeholder="sale_price" type="text" value="sale_price">
+            </div>
+
+            <div class="form-group">
+                <label for="gtin">gtin</label>
+                <input id="gtin" placeholder="gtin" type="text" value="gtin">
+            </div>
+
+            <div class="form-group">
+                <label for="mpn">mpn</label>
+                <input id="mpn" placeholder="mpn" type="text" value="mpn">
+            </div>
+
+            <div class="form-group">
+                <label for="brand">brand</label>
+                <input id="brand" placeholder="brand" type="text" value="brand">
+            </div>
+
+            <div class="form-group">
+                <label for="google_product_category">google_product_category</label>
+                <input id="google_product_category" placeholder="google_product_category" type="text" value="google_product_category">
+            </div>
+
+            <div class="form-group">
+                <label for="item_group_id">item_group_id</label>
+                <input id="item_group_id" placeholder="item_group_id" type="text" value="item_group_id">
+            </div>
+
+            <div class="form-group">
+                <label for="custom_label_0">custom_label_0</label>
+                <input id="custom_label_0" placeholder="custom_label_0" type="text" value="custom_label_0">
+            </div>
+
+            <div class="form-group">
+                <label for="custom_label_1">custom_label_1</label>
+                <input id="custom_label_1" placeholder="custom_label_1" type="text" value="custom_label_1">
+            </div>
+
+            <div class="form-group">
+                <label for="custom_label_2">custom_label_2</label>
+                <input id="custom_label_2" placeholder="custom_label_2" type="text" value="custom_label_2">
+            </div>
+
+            <div class="form-group">
+                <label for="custom_label_3">custom_label_3</label>
+                <input id="custom_label_3" placeholder="custom_label_3" type="text" value="custom_label_3">
+            </div>
+
+            <div class="form-group">
+                <label for="custom_label_4">custom_label_4</label>
+                <input id="custom_label_4" placeholder="custom_label_4" type="text" value="custom_label_4">
+            </div>
+        </div>
+    </div>
+
+    <input type="button" onclick="collectAndSendData('form')" value="Submit">
+</body>
+
+</html>
