@@ -122,7 +122,6 @@ function showAllFeedFile() {
   })
     .then((response) => response.json())
     .then((result) => {
-      console.log(result);
       const tableContent = document.getElementById("table-content");
       tableContent.innerHTML = "";
       result["_data"].forEach((feed) => {
@@ -245,8 +244,6 @@ function generateFile(selectedClient, selectedPlatform, customFilter) {
 
   const url = jsonToUrl(requestUrl, customFilter);
 
-  console.log(url);
-
   fetch(url, {
     method: "GET",
     headers: {
@@ -257,6 +254,7 @@ function generateFile(selectedClient, selectedPlatform, customFilter) {
       if (!response.ok) {
         throw new Error();
       }
+      alert("Successfully generated file");
     })
     .catch((error) => console.log("error", error));
 }
