@@ -1,4 +1,4 @@
-let base_url = "http://localhost:8080";
+let base_url = "https://datafeed-api-aaron.atelli.ai";
 
 let client_url = `${base_url}/client`;
 
