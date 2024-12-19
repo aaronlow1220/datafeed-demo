@@ -60,11 +60,7 @@ function uploadFile() {
   const formData = new FormData();
   formData.append("file", file);
 
-  console.log(file);
-
-  let startTime = performance.now();
-  let endTime;
-  const upload = fetch(file_url, {
+  fetch(file_url, {
     method: "POST",
     body: formData,
   })
@@ -82,7 +78,7 @@ function uploadUrl() {
   const url = document.getElementById("url").value;
   let file_url = `${base_url}/file/upload/${client}`;
 
-  const upload = fetch(file_url, {
+  fetch(file_url, {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
