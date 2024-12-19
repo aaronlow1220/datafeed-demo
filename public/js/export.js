@@ -164,7 +164,9 @@ function showAllFeedFile() {
           const editClient = document.getElementById("edit-client");
           const editPlatform = document.getElementById("edit-platform");
           const editClientLabel = document.getElementById("edit-client-label");
-          const editPlatformLabel = document.getElementById("edit-platform-label");
+          const editPlatformLabel = document.getElementById(
+            "edit-platform-label"
+          );
           const editUtm = document.getElementById("edit-utm");
           const editId = document.getElementById("edit-id");
 
@@ -395,4 +397,10 @@ const editPopup = document.querySelector(".edit-popup");
 const closeButton = document.querySelector(".close");
 closeButton.addEventListener("click", function () {
   closeEditPopup();
+});
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "Escape") {
+    closeEditPopup();
+  }
 });
