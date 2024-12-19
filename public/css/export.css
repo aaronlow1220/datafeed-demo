@@ -174,7 +174,7 @@ input[type="text"]:focus {
     box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
 }
 
-table button{
+table button {
     font-size: 12px;
 }
 
@@ -192,7 +192,7 @@ table th {
 
 table td:nth-child(1),
 table td:nth-child(2) {
-    width: 7%;
+    width: 8%;
     text-align: center;
 }
 
@@ -201,7 +201,7 @@ table td:nth-child(3) {
 }
 
 table td:nth-child(5) {
-    width: 16%;
+    width: 17%;
 }
 
 table td:nth-child(6) {
@@ -241,7 +241,6 @@ table.GeneratedTable thead {
     background-color: #cccccc;
 }
 
-/* Edit Popup */
 .edit-popup {
     position: fixed;
     top: 0;
@@ -306,6 +305,7 @@ table.GeneratedTable thead {
     border-radius: 4px;
     font-size: 14px;
     cursor: pointer;
+    margin: 0 0 0.3rem 0;
     transition: background-color 0.3s ease;
 }
 
@@ -315,7 +315,7 @@ table.GeneratedTable thead {
 
 .edit-param {
     display: flex;
-    gap: 0.6rem;
+    gap: 0.4rem;
     flex-direction: row;
 }
 
