@@ -241,6 +241,10 @@ table.GeneratedTable thead {
     background-color: #cccccc;
 }
 
+table.GeneratedTable button {
+    margin: 0.5rem 0;
+}
+
 .edit-popup {
     position: fixed;
     top: 0;
