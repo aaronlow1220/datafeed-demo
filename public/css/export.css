@@ -1,0 +1,324 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #f0f0f5;
+}
+
+#platform-data {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 800px;
+}
+
+.form {
+    width: 1200px;
+    margin: 8px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+label {
+    width: 30%;
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0;
+    padding-right: 10px;
+    box-sizing: border-box;
+    text-align: right;
+}
+
+#client,
+#platform,
+.control {
+    padding: 0.6rem;
+    border: 1px solid #ccc;
+    border-radius: 0.3rem;
+}
+
+input[type="text"]:focus {
+    border-color: #007BFF;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+input[type="button"],
+button {
+    padding: 8px 16px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 1rem 0;
+}
+
+input[type="button"]:hover,
+button:hover {
+    background-color: #0056b3;
+}
+
+input[type="file"]::file-selector-button {
+    border-radius: 4px;
+    padding: 0 16px;
+    height: 40px;
+    cursor: pointer;
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    box-shadow: 0px 1px 0px rgba(0, 0, 0, 0.05);
+    margin-right: 16px;
+    transition: background-color 200ms;
+}
+
+input[type="file"]::file-selector-button:hover {
+    background-color: #f3f4f6;
+}
+
+input[type="file"]::file-selector-button:active {
+    background-color: #e5e7eb;
+}
+
+nav {
+    width: 100%;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+}
+
+.selector {
+    display: flex;
+    gap: 0.6rem;
+}
+
+.selector select {
+    width: 100%;
+}
+
+.custom-filter {
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.custom-filter button {
+    width: 100%;
+    padding: 0.6rem;
+    margin-top: 0.6rem;
+}
+
+.custom-filter-params {
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+}
+
+.param {
+    display: flex;
+    flex-direction: row;
+    gap: 0.6rem;
+}
+
+.param input {
+    padding: 0.6rem;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+}
+
+#remove {
+    width: 10%;
+    height: 100%;
+}
+
+.title {
+    margin-bottom: 1rem;
+}
+
+.custom-utm {
+    margin-top: 1rem;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus {
+    border-color: #007BFF;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+table button{
+    font-size: 12px;
+}
+
+table td {
+    font-size: 14px;
+    word-wrap: break-word;
+    word-break: break-word;
+    white-space: normal;
+}
+
+table th {
+    font-size: 12px;
+    text-align: center;
+}
+
+table td:nth-child(1),
+table td:nth-child(2) {
+    width: 7%;
+    text-align: center;
+}
+
+table td:nth-child(3) {
+    width: 26%;
+}
+
+table td:nth-child(5) {
+    width: 16%;
+}
+
+table td:nth-child(6) {
+    width: 7%;
+    text-align: center;
+}
+
+table td:nth-child(7) {
+    width: 8%;
+    text-align: center;
+}
+
+table td:last-child {
+    width: 6%;
+    text-align: center;
+}
+
+table.GeneratedTable {
+    width: 100%;
+    background-color: #ffffff;
+    border-collapse: collapse;
+    border-width: 1px;
+    border-color: #999999;
+    border-style: solid;
+    color: #000000;
+}
+
+table.GeneratedTable td,
+table.GeneratedTable th {
+    border-width: 1px;
+    border-color: #999999;
+    border-style: solid;
+    padding: 3px;
+}
+
+table.GeneratedTable thead {
+    background-color: #cccccc;
+}
+
+/* Edit Popup */
+.edit-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+.edit-popup-hidden {
+    display: none;
+}
+
+.edit-popup-content {
+    width: 40rem;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+
+.edit-popup-content .close {
+    padding: 4px 12px;
+    margin: 0;
+    font-size: 1.2rem;
+    border-radius: 30rem;
+    background-color: #cccccc;
+    color: #3d3d3d;
+}
+
+.edit-popup-content .close:hover {
+    background-color: #afafaf;
+}
+
+.popup-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.edit-form input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.edit-form button {
+    padding: 8px 16px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.edit-form button:hover {
+    background-color: #0056b3;
+}
+
+.edit-param {
+    display: flex;
+    gap: 0.6rem;
+    flex-direction: row;
+}
+
+.edit-param .control {
+    margin-bottom: 10px;
+}

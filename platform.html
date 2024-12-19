@@ -7,152 +7,9 @@
     <title>Platform | Datafeed</title>
     <link rel="shortcut icon" href="https://symbols.getvecta.com/stencil_28/26_data-catalog.96ec6138ec.svg"
         type="image/x-icon">
+    <link rel="stylesheet" href="./public/css/init.css">
+    <link rel="stylesheet" href="./public/css/platform.css">
 </head>
-<script>
-    let base_url = "https://datafeed-api-aaron.atelli.ai";
-
-    let url = `${base_url}/platform`;
-
-    function collectAndSendData(divId) {
-        const div = document.getElementById(divId);
-        const inputs = div.querySelectorAll('input');
-        const name = document.querySelector("#name");
-        const label = document.querySelector("#label");
-        const data = {};
-
-        inputs.forEach(input => {
-            data[input.id] = input.value;
-        });
-
-        const jsonStructure = {
-            name: name.value,
-            label: label.value,
-            data: JSON.stringify(data)
-        };
-
-        fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(jsonStructure)
-        })
-            .then((response) => {
-                if (!response.ok) {
-                    throw new Error();
-                }
-                alert('Success');
-            })
-            .catch(error => alert('Error'));
-    }
-</script>
-<style>
-    * {
-        font-family: sans-serif;
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
-
-    body {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        background-color: #f0f0f5;
-    }
-
-    #platform-data {
-        display: flex;
-        flex-direction: column;
-        width: 100%;
-        max-width: 800px;
-    }
-
-    .form {
-        width: 100%;
-        margin: 20px auto;
-        padding: 20px;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        background-color: #ffffff;
-        /* 表單背景顏色 */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        /* 表單陰影 */
-    }
-
-    .form-group {
-        display: flex;
-        align-items: center;
-        margin-bottom: 15px;
-    }
-
-    label {
-        width: 30%;
-        font-size: 14px;
-        font-weight: bold;
-        color: #333;
-        margin-bottom: 0;
-        padding-right: 10px;
-        box-sizing: border-box;
-        text-align: right;
-    }
-
-    input[type="text"] {
-        width: 70%;
-        padding: 10px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        font-size: 16px;
-        box-sizing: border-box;
-    }
-
-    input[type="text"]:focus {
-        border-color: #007BFF;
-        outline: none;
-        box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-    }
-
-    input[type="button"] {
-        padding: 8px 16px;
-        background-color: #007BFF;
-        color: #fff;
-        border: none;
-        border-radius: 4px;
-        font-size: 14px;
-        cursor: pointer;
-        transition: background-color 0.3s ease;
-        margin-bottom: 1rem;
-    }
-
-    input[type="button"]:hover {
-        background-color: #0056b3;
-    }
-
-    .platform_name {
-        display: flex;
-        justify-content: space-between;
-        gap: 1rem;
-    }
-
-    nav {
-        width: 100%;
-        background-color: white;
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-        padding: 1rem;
-        margin-bottom: 1rem;
-    }
-
-    nav a {
-        text-decoration: none;
-        color: #333;
-    }
-
-    .title {
-        margin-bottom: 1rem;
-    }
-</style>
 
 <body>
     <nav>
@@ -267,6 +124,7 @@
     </div>
 
     <input type="button" onclick="collectAndSendData('form')" value="Submit">
+    <script src="./public/js/platform.js"></script>
 </body>
 
 </html>
